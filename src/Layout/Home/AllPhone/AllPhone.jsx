@@ -14,7 +14,7 @@ const AllPhone = () => {
          })
 
     },[])
-    // console.log(allPhone);
+    
     return (
         <div className="p-9"> 
 
@@ -40,12 +40,21 @@ const AllPhone = () => {
   </div>
 </div>
             <div className="grid grid-cols-3 space-y-6 ">
-                {
-                    allPhone.filter((item) =>{
+            {
+  allPhone
+    .filter((item) => {
+      const lowerCaseSearch = search.toLowerCase();
+      const lowerCaseName = item.name.toLowerCase();
+      const lowerCasePrice = item.price.toLowerCase();
 
-                        return search.toLowerCase()=== '' ? item : item.name.toLowerCase().includes(search)
-                    }). map(phone => <AllPhoneCard key={phone._id} phone={phone} ></AllPhoneCard>)
-                }
+      return (
+        lowerCaseSearch === '' ||
+        lowerCaseName.includes(lowerCaseSearch) ||
+        lowerCasePrice.includes(lowerCaseSearch)
+      );
+    })
+    .map((phone) => <AllPhoneCard key={phone._id} phone={phone}></AllPhoneCard>)
+}
             </div>
         </div>
     );

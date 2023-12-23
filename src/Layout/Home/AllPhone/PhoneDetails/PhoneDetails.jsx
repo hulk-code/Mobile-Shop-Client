@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link,  useNavigate, useParams } from "react-router-dom";
 
 import Swal from "sweetalert2";
 
@@ -8,6 +8,7 @@ const PhoneDetails = () => {
   console.log(id);
   const [product, setProduct] = useState("");
   const alldata={...product}
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:5000/phonesDetails/${id}`)
@@ -21,7 +22,7 @@ const PhoneDetails = () => {
 
   const handleAddToCart = (data) =>{
     console.log(data);
-    // const allData = {...data, user.email}
+  
     fetch('http://localhost:5000/addToCart',{
         method: "POST",
         headers: {
@@ -36,9 +37,16 @@ const PhoneDetails = () => {
             Swal.fire({
                 icon:'success',
                 title: 'cart added successfully'
-            })
+            }).then(() => {
+                
+                navigate("/order");
+              });
         }
+
     })
+    .catch(error => {
+        console.error('Error adding to cart:', error);
+      });
 }
   return (
     <div>
