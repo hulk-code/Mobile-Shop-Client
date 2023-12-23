@@ -1,11 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../../Hook/UseAuth/UseAuth";
 
 
 const Navbar = () => {
+    const{user , logOut}=useAuth()
     const  navOptions=<>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/order'>My_Order</NavLink></li>
+   
     </>
+
+const hanadleLogOut= () => {
+
+    logOut()
+    .then(result =>{
+      console.log(result);
+    })
+    .catch(error =>{
+      console.error(error);
+    })
+}
     return (
         <>
         <div className="navbar fixed z-20 bg-opacity-30 h-[100px] bg-black text-white ">
@@ -28,8 +42,31 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">LogIn</a>
-            </div>
+    <div className="flex items-center lg:mr-2">
+    {
+      user?.displayName
+     }
+       {
+        user && <div className="avatar">
+        <div className="w-10 lg:mr-3 lg:ml-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <img  src={user?.photoURL} alt="" />
+        </div>
+      </div>
+       }
+    </div>
+    
+
+    {
+      user ? <button className="btn bg-black text-white ms-3 hover:bg-slate-500" onClick={hanadleLogOut} >Log Out</button> 
+      :
+      <Link to='/login'>
+     <button className="btn bg-black text-white ms-3 hover:bg-slate-500">Login</button>
+  </Link>
+    }
+
+    <Link to='/register'></Link>
+  </div>
+ 
         </div>
     </>
     );

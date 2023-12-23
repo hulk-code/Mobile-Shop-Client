@@ -3,6 +3,7 @@ import Root from "../Root/Root";
 import Home from "../Layout/Home/Home";
 import PhoneDetails from "../Layout/Home/AllPhone/PhoneDetails/PhoneDetails";
 import Order from "../Layout/Order/Order";
+import SignUp from "../UserAccount/SignUp/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         {
           path: "/order",
           element:<Order></Order>,
+        },
+        {
+          path: "/signup",
+          element:<SignUp></SignUp>,
         },
 
       ],

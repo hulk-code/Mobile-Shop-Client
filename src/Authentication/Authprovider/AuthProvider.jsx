@@ -48,6 +48,26 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return updateProfile(auth.currentUser, profile);
       };
+      useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+          setUser(currentUser);
+          setLoading(false);
+        });
+        return () => {
+          return unsubscribe();
+        };
+      }, []);
+    
+      const authInfo = {
+        user,
+        createUser,
+        logIn,
+        loading,
+        googleSignIn,
+        LogOut,
+        updateUserProfile,
+        resetPass,
+      };
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
