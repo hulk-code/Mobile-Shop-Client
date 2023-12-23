@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import "./SignUp.css";
 import useAuth from "../../Hook/UseAuth/UseAuth";
+import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 
 
@@ -160,7 +161,7 @@ const SignUp = () => {
           </div>
         </form>
         <div>
-          {/* <GoogleSignIn></GoogleSignIn> */}
+          <GoogleSignIn></GoogleSignIn>
         </div>
       </div>
     </div>

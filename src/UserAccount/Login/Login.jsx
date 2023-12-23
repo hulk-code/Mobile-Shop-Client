@@ -8,6 +8,7 @@ import "./Login.css";
 
 
 import useAuth from "../../Hook/UseAuth/UseAuth";
+import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const LogIn = () => {
   const { logIn } = useAuth()
@@ -127,7 +128,7 @@ const LogIn = () => {
           </div>
         </form>
         <div>
-         {/* <GoogleSignIn></GoogleSignIn> */}
+         <GoogleSignIn></GoogleSignIn>
         </div>
       </div>
     </div>
