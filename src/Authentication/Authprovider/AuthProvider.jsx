@@ -27,6 +27,10 @@ const AuthProvider = ({ children }) => {
       setLoading(true);
       return createUserWithEmailAndPassword(auth, email, password);
     };
+    const logIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+      };
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
