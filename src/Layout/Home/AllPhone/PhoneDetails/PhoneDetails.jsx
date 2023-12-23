@@ -3,7 +3,8 @@ import { Link,  useNavigate, useParams } from "react-router-dom";
 
 import Swal from "sweetalert2";
 import useAuth from "../../../../Hook/UseAuth/UseAuth";
-
+// http://localhost:5000
+// http://localhost:5000
 const PhoneDetails = () => {
   const { id } = useParams();
   const {user}=useAuth()

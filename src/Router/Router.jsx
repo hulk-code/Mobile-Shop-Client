@@ -6,11 +6,13 @@ import Order from "../Layout/Order/Order";
 import SignUp from "../UserAccount/SignUp/SignUp";
 import LogIn from "../UserAccount/Login/Login";
 import PrivateRoute from "../Authentication/PrivateRoute/PrivateRoute";
+import ErrorPage from "../Layout/Error/Error";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",

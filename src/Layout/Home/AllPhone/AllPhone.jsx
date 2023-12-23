@@ -3,14 +3,14 @@ import AllPhoneCard from "./AllPhoneCard";
 
 const AllPhone = () => {
   const [allPhone, setAllPhone] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [displayedPhones, setDisplayedPhones] = useState([]);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/phones')
-      .then(res => res.json())
-      .then(data => {
+    fetch("http://localhost:5000/phones")
+      .then((res) => res.json())
+      .then((data) => {
         setAllPhone(data);
         setDisplayedPhones(data.slice(0, 6)); // Initial display of 6 items
       });
@@ -30,7 +30,9 @@ const AllPhone = () => {
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold">Search By Name And Price </span>
+                  <span className="label-text font-bold">
+                    Search By Name And Price{" "}
+                  </span>
                 </label>
                 <input
                   onChange={(e) => setSearch(e.target.value)}
@@ -51,7 +53,7 @@ const AllPhone = () => {
             const lowerCasePrice = item.price.toLowerCase();
 
             return (
-              lowerCaseSearch === '' ||
+              lowerCaseSearch === "" ||
               lowerCaseName.includes(lowerCaseSearch) ||
               lowerCasePrice.includes(lowerCaseSearch)
             );
@@ -62,7 +64,7 @@ const AllPhone = () => {
       </div>
       <div className="text-center mt-3 mb-3">
         <button onClick={handleSeeMore} className="btn w-1/2">
-          {showAll ? 'See More' : 'See Less'}
+          {showAll ? "See More" : "See Less"}
         </button>
       </div>
     </div>
