@@ -3,7 +3,7 @@ import useAuth from "../../../Hook/UseAuth/UseAuth";
 
 
 const Navbar = () => {
-    const{user , logOut}=useAuth()
+    const{user ,  LogOut}=useAuth()
     const  navOptions=<>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/order'>My_Order</NavLink></li>
@@ -12,7 +12,7 @@ const Navbar = () => {
 
 const hanadleLogOut= () => {
 
-    logOut()
+    LogOut()
     .then(result =>{
       console.log(result);
     })
