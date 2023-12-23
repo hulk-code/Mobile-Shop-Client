@@ -39,7 +39,15 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signOut(auth);
       };
+      const resetPass = (email) => {
+        setLoading(true);
+        return sendPasswordResetEmail(auth, email);
+      };
     
+      const updateUserProfile = (profile) => {
+        setLoading(true);
+        return updateProfile(auth.currentUser, profile);
+      };
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
