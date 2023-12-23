@@ -5,6 +5,7 @@ import PhoneDetails from "../Layout/Home/AllPhone/PhoneDetails/PhoneDetails";
 import Order from "../Layout/Order/Order";
 import SignUp from "../UserAccount/SignUp/SignUp";
 import LogIn from "../UserAccount/Login/Login";
+import PrivateRoute from "../Authentication/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -17,12 +18,12 @@ const router = createBrowserRouter([
         },
         {
           path: "/details/:id",
-          element: <PhoneDetails></PhoneDetails>,
+          element: <PrivateRoute><PhoneDetails></PhoneDetails></PrivateRoute>,
         },
         
         {
           path: "/order",
-          element:<Order></Order>,
+          element:<PrivateRoute><Order></Order></PrivateRoute>,
         },
         {
           path: "/signup",

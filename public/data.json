@@ -53,6 +53,60 @@
         "OS": "Android 10",
         "price": "249.99",
         "img": "https://i.ibb.co/Xb6jNxQ/phone5.jpg"
+      },
+      {
+        "name": "Phone1",
+        "type": "Flagship",
+        "processor": "Snapdragon888",
+        "memory": "8GBRAM",
+        "OS": "Android12",
+        "price": "899.99",
+        "img": "https://i.ibb.co/25D9knD/phone6.webp"
+      },
+      {
+        "name": "Phone2",
+        "type": "Mid-range",
+        "processor": "MediaTekDimensity800U",
+        "memory": "6GBRAM",
+        "OS": "Android11",
+        "price": "449.99",
+        "img": "https://i.ibb.co/DYjy1Mc/phone2.jpg"
+      },
+      {
+        "name": "Phone3",
+        "type": "Budget",
+        "processor": "Exynos850",
+        "memory": "4GBRAM",
+        "OS": "Android10",
+        "price": "249.99",
+        "img": "https://i.ibb.co/8YGT94X/phone3.webp"
+      },
+      {
+        "name": "Phone3",
+        "type": "Flagship",
+        "processor": "Snapdragon888",
+        "memory": "8GBRAM",
+        "OS": "Android 12",
+        "price": "899.99",
+        "img": "https://i.ibb.co/y4D2t9P/phone4.png"
+      },
+      {
+        "name": "Phone2",
+        "type": "Mid-range",
+        "processor": "MediaTekDimensity800U",
+        "memory": "6GBRAM",
+        "OS": "Android 11",
+        "price": "449.99",
+        "img": "https://i.ibb.co/Xb6jNxQ/phone5.jpg"
+      },
+      {
+        "name": "Phone1",
+        "type": "Budget",
+        "processor": "Exynos850",
+        "memory": "4GBRAM",
+        "OS": "Android 10",
+        "price": "249.99",
+        "img": "https://i.ibb.co/Xb6jNxQ/phone5.jpg"
       }
       
     ]
