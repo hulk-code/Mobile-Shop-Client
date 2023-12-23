@@ -2,15 +2,16 @@
 import {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../../Hook/UseAuth/UseAuth";
 
 
 const Order = () => {
     const [addCarts , setAddCarts]=useState([])
     const [control, setControl]= useState(false);
-   
+   const {user}=useAuth()
    
     useEffect(() =>{
-    fetch('http://localhost:5000/addToCart')
+    fetch(`http://localhost:5000/addToCart?email=${user?.email}`)
     .then(res =>res.json())
     .then(data =>{
       console.log(data)

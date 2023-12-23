@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { Link,  useNavigate, useParams } from "react-router-dom";
 
 import Swal from "sweetalert2";
+import useAuth from "../../../../Hook/UseAuth/UseAuth";
 
 const PhoneDetails = () => {
   const { id } = useParams();
+  const {user}=useAuth()
   console.log(id);
   const [product, setProduct] = useState("");
-  const alldata={...product}
+  const email=user.email
+  const alldata={...product , email}
   const navigate = useNavigate();
 
   useEffect(() => {

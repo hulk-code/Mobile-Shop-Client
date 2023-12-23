@@ -29,7 +29,7 @@ const AllPhone = () => {
       <form className="card-body" >
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-bold">Search By Name </span>
+            <span className="label-text font-bold">Search By Name And Price </span>
           </label>
           <input onChange={(e) => setSearch(e.target.value)}  type="text" placeholder="Search By Name" className="input input-bordered"/>
         </div>
