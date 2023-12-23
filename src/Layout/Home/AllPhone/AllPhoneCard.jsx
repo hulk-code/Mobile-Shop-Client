@@ -1,7 +1,10 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 
 
 const AllPhoneCard = ({ phone }) => {
-  const { name, type, processor, memory, OS, price, img } = phone;
+  const { _id, name, type, processor, memory, OS, price, img } = phone;
+ 
 
   return (
     <div>
@@ -10,7 +13,7 @@ const AllPhoneCard = ({ phone }) => {
           <img src={img} alt="" />
         </figure>
         <div className="card-body relative">
-        <div className="absolute inset-0 gradient-to-br transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+        <div className="absolute inset-0  gradient-to-br transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
 
           <h2 className="card-title">{name}</h2>
           <p>{type}</p>
@@ -22,8 +25,9 @@ const AllPhoneCard = ({ phone }) => {
             <p>{OS}</p>
             <p>{price}</p>
           </div>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+          <div className=" card-actions justify-end z-10">
+          <Link  to={`/details/${_id}`}><button className="btn btn-primary">details</button></Link>
+       
           </div>
         </div>
       </div>

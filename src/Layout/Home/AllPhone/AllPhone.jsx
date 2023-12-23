@@ -14,6 +14,7 @@ const AllPhone = () => {
          })
 
     },[])
+    // console.log(allPhone);
     return (
         <div className="p-9"> 
 
