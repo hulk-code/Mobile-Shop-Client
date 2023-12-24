@@ -11,7 +11,7 @@ const Order = () => {
    const {user}=useAuth()
    
     useEffect(() =>{
-    fetch(`http://localhost:5000/addToCart?email=${user?.email}`)
+    fetch(`https://mobile-shop-server-liard.vercel.app/addToCart?email=${user?.email}`)
     .then(res =>res.json())
     .then(data =>{
       console.log(data)
@@ -31,7 +31,7 @@ const Order = () => {
           confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:5000/addToCart/${id}`,{
+            fetch(`https://mobile-shop-server-liard.vercel.app/addToCart/${id}`,{
               method: "DELETE",
             })
             .then(res => res.json())

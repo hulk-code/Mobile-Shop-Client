@@ -8,7 +8,7 @@ const AllPhone = () => {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/phones")
+    fetch("https://mobile-shop-server-liard.vercel.app/phones")
       .then((res) => res.json())
       .then((data) => {
         setAllPhone(data);

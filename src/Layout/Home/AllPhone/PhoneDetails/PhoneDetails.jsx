@@ -3,8 +3,8 @@ import { Link,  useNavigate, useParams } from "react-router-dom";
 
 import Swal from "sweetalert2";
 import useAuth from "../../../../Hook/UseAuth/UseAuth";
-// http://localhost:5000
-// http://localhost:5000
+
+// https://mobile-shop-server-liard.vercel.app
 const PhoneDetails = () => {
   const { id } = useParams();
   const {user}=useAuth()
@@ -15,7 +15,7 @@ const PhoneDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/phonesDetails/${id}`)
+    fetch(`https://mobile-shop-server-liard.vercel.app/phonesDetails/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -27,7 +27,7 @@ const PhoneDetails = () => {
   const handleAddToCart = (data) =>{
     console.log(data);
   
-    fetch('http://localhost:5000/addToCart',{
+    fetch('https://mobile-shop-server-liard.vercel.app/addToCart',{
         method: "POST",
         headers: {
             "content-type": "application/json"
